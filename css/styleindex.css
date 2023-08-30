@@ -1,0 +1,732 @@
+:root{
+    --primary:#3DCFD3;
+    --dark:#161616;
+    --pure:#FFFFFF;
+    --ternary:#898989;
+    --light:#F2F2F2;
+    --secondary:#070606;
+}
+body {
+    margin: 0px;
+    font-family: 'Montserrat', sans-serif;
+    display: block;
+    background-color: #F6E3C5;
+}
+
+ul {
+    list-style-type: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+p {
+    font-size: 14px;
+}
+
+
+/* Header */
+
+header {
+    background-color: #A0D995;
+    display: flex;
+    justify-content: space-between;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 99;
+}
+
+header .logo img {
+    width: 170px;
+    height: 150px;
+    margin: -3.3%;
+    margin-left: 10px;
+    padding: 0px;
+    position: absolute;
+    top: 0px;
+}
+
+header .nav-links ul {
+    display: flex;
+}
+
+header .nav-links ul:last-child {
+    margin-right: 20px;
+}
+
+header .nav-links ul li {
+    margin-left: 35px;
+    margin-right:35px;
+}
+
+
+header .nav-links ul li:hover,
+.active {
+    padding-bottom: 3px;
+    border-bottom: 3px solid #fff;
+    border-radius: 3px;
+}
+
+header .nav-links a {
+    color: #fff;
+    font-size: 14px;
+    margin-top: auto;
+    margin-bottom: auto;
+}
+
+header .hnav-links ul:last-child {
+    margin-bottom: 20px;
+}
+
+header .hnav-links ul li {
+    margin-bottom: 35px;
+}
+
+header .hnav-links ul li:hover,
+.hactive {
+    padding-bottom: 6px;
+    border-bottom: 3px solid #fff;
+    border-radius: 3px;
+}
+
+header .hnav-links a {
+    color: #fff;
+    font-size: 14px;
+    margin-top: auto;
+    margin-bottom: auto;
+}
+
+.ham-img img {
+    height: 45px;
+}
+
+.hmenu,
+.navicon,
+.toggle {
+    display: none;
+}
+
+.mobile-mode {
+    display: none;
+}
+
+    
+
+@media (max-width: 800px) {
+    header .nav-links {
+        display: none;
+    }
+    #myDIV {
+        display: none;
+    }
+    .toggle {
+        display: block;
+    }
+    #ico {
+        display: inline;
+        width: 25px;
+        height: 10px;
+        margin-top: auto;
+        margin-bottom: auto;
+        margin-right: 15px;
+        float: right;
+    }
+    .navicon {
+        background: transparent;
+        padding-bottom: 20px;
+        padding-right: 6px;
+        position: relative;
+        display: block;
+        z-index: 99;
+        transition: linear 0.5s all;
+    }
+    .navicon:before,
+    .navicon:after {
+        background: #b5cad1;
+        backface-visibility: hidden;
+        content: "";
+        height: 3px;
+        left: 0;
+        transition: 0.8s ease;
+        width: 30px;
+        border-radius: 20%;
+    }
+    .navicon:before {
+        box-shadow: #b5cad1 0 10px 0 0;
+        position: absolute;
+        top: 0;
+    }
+    .navicon:after {
+        position: absolute;
+        top: 20px;
+    }
+    .navicon--active {
+        margin-top: 20px;
+        transition: linear 0.5s all;
+    }
+    .navicon--active:before {
+        box-shadow: transparent 0 0 0 0;
+        top: 15px;
+        transform: rotate(225deg);
+    }
+    .navicon--active:after {
+        top: 15px;
+        transform: rotate(315deg);
+    }
+    .toggle {
+        display: block;
+        position: absolute;
+        background-color: rgba(25, 25, 25, .95);
+        width: 80%;
+        top: 50%;
+        left: 50%;
+        opacity: 0;
+        transition: ease-in 0.5s all;
+        transform: translate(-50%, -200%);
+        min-height: 360px;
+        z-index: 99999999999999;
+        padding-top: 7px;
+    }
+    .toggle--active {
+        display: block;
+        position: fixed;
+        top: 0;
+        left: 50%;
+        opacity: 1;
+        transition: ease-in 0.5s all;
+        transform: translate(-50%, 50%);
+    }
+    #hamDIV {
+        width: 100%;
+        display: block;
+        padding: 0;
+        border-left-color: rgba(0, 0, 0, 0.25);
+        margin-left: -23px;
+    }
+    #hamDIV li a:hover {
+        color: #a09f9f;
+        transition: linear 0.5s all;
+        transform: scale(1.15);
+        font-weight: 700;
+    }
+    .desktop-mode {
+        display: none;
+    }
+    .mobile-mode {
+        display: block;
+    }
+}
+
+
+/* About Us */
+
+section.introduction {
+    margin-top: 60px;
+}
+
+section.introduction .intro-flex img {
+    float: left;
+    width: 500px;
+    height: 500px;
+}
+
+section.introduction .intro-flex .intro-detail {
+    margin: 20px;
+    padding-top: 8px;
+    margin-bottom: 43px;
+}
+
+.disappear {
+    text-align: center;
+}
+
+@media (max-width: 1000px) {
+    p {
+        font-size: small;
+    }
+    section.introduction .intro-flex img {
+        width: 50%;
+        height: auto;
+    }
+    .disappear {
+        font-size: 18px;
+    }
+}
+
+@media (max-width: 500px) {
+    section.introduction .intro-flex img {
+        width: 100%;
+    }
+    #map {
+        width: 100%;
+    }
+    .disappear {
+        display: none;
+    }
+}
+
+
+/* Intro Slides */
+
+.intro-slides {
+    margin-bottom: 10px;
+}
+
+.mySlides {
+    display: none;
+}
+
+img {
+    vertical-align: middle;
+}
+
+
+/* Slideshow container */
+
+.slideshow-container {
+    position: relative;
+    margin: auto;
+}
+
+
+/* Caption text */
+
+.text {
+    color: #ffff;
+    position: absolute;
+    top: 0;
+    height: 100%;
+    text-align: center;
+    background-color: #000;
+    opacity: 0.7;
+    width: 100%;
+}
+
+.text h1 {
+    font-size: 70px;
+    padding-left: 30px;
+    text-align: left;
+    font-family: 'Hind Madurai', sans-serif;
+}
+
+.text p {
+    font-size: 50px;
+    text-align: left;
+    padding-left: 30px;
+    font-family: 'Hind', sans-serif;
+}
+
+.text button {
+    color: #000;
+    border: none;
+    border-radius: 5px;
+    padding: 14px;
+    font-size: 16px;
+    background-color: #fff;
+    border-radius: 25px;
+    position: absolute;
+    margin-left: -45%;
+}
+
+@media (max-width: 960px) {
+    .text h1 {
+        font-size: 30px;
+        padding: 9% 50px 0 50px;
+    }
+    .text p {
+        font-size: 14px;
+        padding: 0 10px;
+    }
+    .text button {
+        padding: 12px;
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 660px) {
+    .text h1 {
+        font-size: 25px;
+        padding: 6% 50px 0 50px;
+    }
+    .text p {
+        font-size: 13px;
+    }
+    .text button {
+        padding: 12px;
+        font-size: 13px;
+    }
+}
+
+@media (max-width: 586px) {
+    .text h1 {
+        font-size: 22px;
+        padding: 3% 50px 0 50px;
+    }
+    .text p {
+        font-size: 13px;
+    }
+    .text button {
+        padding: 12px;
+        font-size: 13px;
+    }
+}
+
+@media (max-width: 520px) {
+    .text h1 {
+        font-size: 18px;
+        padding: 3% 50px 0 50px;
+    }
+    .text p {
+        font-size: 13px;
+    }
+    .text button {
+        padding: 12px;
+        font-size: 13px;
+    }
+}
+
+@media (max-width: 360px) {
+    .text h1 {
+        font-size: 12px;
+        padding: 0 50px 0 50px;
+        margin-bottom: -8px;
+    }
+    .text p {
+        font-size: 10px;
+        margin-bottom: 3px;
+    }
+    .text button {
+        padding: 8px;
+        font-size: 10px;
+    }
+}
+
+
+/* Number text (1/3 etc) */
+
+.numbertext {
+    color: #f2f2f2;
+    font-size: 12px;
+    padding: 8px 12px;
+    position: absolute;
+    top: 0;
+}
+
+
+/* The dots/bullets/indicators */
+
+.dot {
+    height: 15px;
+    width: 15px;
+    margin: 0 2px;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+    transition: background-color 0.6s ease;
+}
+
+
+/* Fading animation */
+
+.fade {
+    -webkit-animation-name: fade;
+    -webkit-animation-duration: 1.5s;
+    animation-name: fade;
+    animation-duration: 1.5s;
+}
+
+@-webkit-keyframes fade {
+    from {
+        opacity: .4
+    }
+    to {
+        opacity: 1
+    }
+}
+
+@keyframes fade {
+    from {
+        opacity: .4
+    }
+    to {
+        opacity: 1
+    }
+}
+
+
+/* On smaller screens, decrease text size */
+
+@media only screen and (max-width: 300px) {
+    .text {
+        font-size: 11px
+    }
+}
+
+
+/* services*/
+.section-heading{
+    color: var(--secondary);
+    text-align: center;
+    margin-bottom: 6rem;
+    line-height: 0.5;
+    margin-top: 5% ;
+}
+.section-heading + p{
+    color: var(--ternary);
+    font-family: 'Lato',sans-serif;
+    text-align: center;
+    margin-bottom: 8rem;
+}
+.section-heading span{
+    color: var(--primary);
+}
+section.services{
+    background: #F6E3C5;
+}
+section.services .card-wrapper{
+    display: grid;
+    grid-template-columns:1fr 1fr 1fr ;
+    grid-column-gap: 2rem;
+    grid-row-gap: 6rem;
+    margin-bottom: 6%;
+}
+section.services .card-wrapper .card{
+    background: #A0D995;
+    padding: 3rem 2rem;
+    position: relative;
+    padding-top: 5rem;
+    text-align: center;
+    transition: all .3s ease;
+}
+section.services .card-wrapper .card img{
+    position: absolute;
+    top: -3.5rem;
+    left: 50%;
+    transform: translateX(-50%);
+}
+section.services .card-wrapper .card h2{
+    font-weight: 400;
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+    text-align: center;
+}   
+section.services .card-wrapper .card p{
+    font-family: 'Lato',sans-serif;
+    color: var(--ternary);
+    line-height: 1.6;
+}
+section.services .card-wrapper .card:hover{
+    background: var(--dark);
+}
+section.services .card-wrapper .card:hover h2,section.services .card-wrapper .card:hover p{
+    color: var(--pure);
+}
+
+
+/* Virtual Consultation */
+
+section.virtual-consultation h2 {
+    text-align: center;
+}
+
+section.virtual-consultation .consult-content {
+    display: flex;
+    justify-content: space-between;
+}
+
+section.virtual-consultation .consult-content img {
+    width: 500px;
+}
+
+.consult-content .consult-info {
+    margin: 20px;
+    margin-top: 60px;
+    padding: 20px;
+    border: 1px solid #000;
+    border-radius: 20px;
+    background-color: #e4e4e4;
+    height: 60%;
+    box-shadow: 100px #000;
+    padding-bottom: 40px;
+}
+
+.consult-content .consult-info h4 {
+    margin-top: 0px;
+}
+
+.consult-content .consult-info a {
+    font-size: small;
+    color: #ffff;
+    border: 0.1px solid #000;
+    border-radius: 10px;
+    padding: 10px;
+    background-color: #000;
+}
+
+.consult-content .consult-info a:hover {
+    background-color: #fff;
+    color: #000;
+}
+
+@media (max-width: 1050px) {
+    section.virtual-consultation .consult-content {
+        display: block;
+    }
+    section.virtual-consultation .consult-content img {
+        width: 100%;
+    }
+    .consult-content .consult-info {
+        margin-top: -20px;
+    }
+}
+
+
+/* Pharmacy */
+
+section.virtual-pharmacy h2 {
+    text-align: center;
+    margin-bottom: 0px;
+}
+
+section.virtual-pharmacy .pharm-left {
+    margin: 20px;
+    margin-top: 60px;
+    padding: 20px;
+    border: 1px solid #000;
+    border-radius: 20px;
+    background-color: #e4e4e4;
+    height: 60%;
+    box-shadow: 100px #000;
+    padding-bottom: 40px;
+    padding-top: 0px;
+}
+
+section.virtual-pharmacy .pharm-left a {
+    font-size: small;
+    color: #ffff;
+    border: 0.1px solid #000;
+    border-radius: 10px;
+    padding: 10px;
+    background-color: #000;
+}
+
+section.virtual-pharmacy .pharm-left a:hover {
+    background-color: #fff;
+    color: #000;
+}
+
+section.virtual-pharmacy .pharm-content {
+    display: flex;
+    /*  justify-content: space-between; */
+}
+
+section.virtual-pharmacy .pharm-right img {
+    width: 500px;
+}
+
+section.virtual-pharmacy .pharm-links {
+    margin-bottom: 25px;
+    display: block;
+}
+
+#myBtn,
+#myBtn1 {
+    font-size: small;
+    color: #ffff;
+    border: 0.1px solid #000;
+    border-radius: 10px;
+    padding: 10px;
+    background-color: #000;
+}
+
+
+/* The Modal (background) */
+
+.modal {
+    display: none;
+    /* Hidden by default */
+    position: fixed;
+    /* Stay in place */
+    z-index: 1;
+    /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%;
+    /* Full width */
+    height: 100%;
+    /* Full height */
+    overflow: auto;
+    /* Enable scroll if needed */
+    background-color: rgb(0, 0, 0);
+    /* Fallback color */
+    background-color: rgba(0, 0, 0, 0.4);
+    /* Black w/ opacity */
+}
+
+
+/* Modal Content/Box */
+
+.modal-content,
+.modal-content1 {
+    background-color: #000;
+    margin: 15% auto;
+    /* 15% from the top and centered */
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    height: 50%;
+    /* Could be more or less, depending on screen size */
+}
+
+
+/* The Close Button */
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+@media (max-width: 900px) {
+    section.virtual-pharmacy .pharm-content {
+        display: block;
+    }
+    section.virtual-pharmacy .pharm-content img {
+        width: 100%;
+    }
+    section.virtual-pharmacy .pharm-left {
+        margin-top: -20px;
+    }
+}
+
+
+  
+/* Footer */
+
+footer {
+    background-color: black;
+    padding: 1px;
+}
+
+footer p {
+    color: #ffff;
+    text-align: center;
+}
+
+footer .foot img {
+    display: block;
+    height: 50px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: -18px;
+}

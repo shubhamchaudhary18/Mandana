@@ -1,0 +1,329 @@
+/* Find a Hospital */
+body {
+    margin: 0px;
+    font-family: 'Montserrat', sans-serif;
+    display: block;
+    background-color: #F6E3C5;
+}
+
+ul {
+    list-style-type: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+p {
+    font-size: 14px;
+}
+
+
+/* Header */
+
+header {
+    background-color: #A0D995;
+    display: flex;
+    justify-content: space-between;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 99;
+}
+
+header .logo img {
+    width: 70px;
+    height: 50px;
+}
+
+header .nav-links ul {
+    display: flex;
+}
+
+header .nav-links ul:last-child {
+    margin-right: 20px;
+}
+
+header .nav-links ul li {
+    margin-left: 35px;
+    margin-right:35px;
+}
+
+
+
+header .nav-links a {
+    color: #fff;
+    font-size: 14px;
+    margin-top: auto;
+    margin-bottom: auto;
+}
+
+header .hnav-links ul:last-child {
+    margin-bottom: 20px;
+}
+
+header .hnav-links ul li {
+    margin-bottom: 25px;
+}
+
+header .hnav-links ul li:hover,
+.hactive {
+    padding-bottom: 3px;
+    border-bottom: 3px solid #fff;
+    border-radius: 3px;
+}
+
+header .hnav-links a {
+    color: #fff;
+    font-size: 14px;
+    margin-top: auto;
+    margin-bottom: auto;
+}
+
+.ham-img img {
+    height: 45px;
+}
+
+.hmenu,
+.navicon,
+.toggle {
+    display: none;
+}
+
+.mobile-mode {
+    display: none;
+}
+
+    
+
+@media (max-width: 800px) {
+    header .nav-links {
+        display: none;
+    }
+    #myDIV {
+        display: none;
+    }
+    .toggle {
+        display: block;
+    }
+    #ico {
+        display: inline;
+        width: 25px;
+        height: 10px;
+        margin-top: auto;
+        margin-bottom: auto;
+        margin-right: 15px;
+        float: right;
+    }
+    .navicon {
+        background: transparent;
+        padding-bottom: 20px;
+        padding-right: 6px;
+        position: relative;
+        display: block;
+        z-index: 99;
+        transition: linear 0.5s all;
+    }
+    .navicon:before,
+    .navicon:after {
+        background: #b5cad1;
+        backface-visibility: hidden;
+        content: "";
+        height: 3px;
+        left: 0;
+        transition: 0.8s ease;
+        width: 30px;
+        border-radius: 20%;
+    }
+    .navicon:before {
+        box-shadow: #b5cad1 0 10px 0 0;
+        position: absolute;
+        top: 0;
+    }
+    .navicon:after {
+        position: absolute;
+        top: 20px;
+    }
+    .navicon--active {
+        margin-top: 20px;
+        transition: linear 0.5s all;
+    }
+    .navicon--active:before {
+        box-shadow: transparent 0 0 0 0;
+        top: 15px;
+        transform: rotate(225deg);
+    }
+    .navicon--active:after {
+        top: 15px;
+        transform: rotate(315deg);
+    }
+    .toggle {
+        display: block;
+        position: absolute;
+        background-color: rgba(25, 25, 25, .95);
+        width: 80%;
+        top: 50%;
+        left: 50%;
+        opacity: 0;
+        transition: ease-in 0.5s all;
+        transform: translate(-50%, -200%);
+        min-height: 360px;
+        z-index: 99999999999999;
+        padding-top: 7px;
+    }
+    .toggle--active {
+        display: block;
+        position: fixed;
+        top: 0;
+        left: 50%;
+        opacity: 1;
+        transition: ease-in 0.5s all;
+        transform: translate(-50%, 50%);
+    }
+    #hamDIV {
+        width: 100%;
+        display: block;
+        padding: 0;
+        border-left-color: rgba(0, 0, 0, 0.25);
+        margin-left: -23px;
+    }
+    #hamDIV li a:hover {
+        color: #a09f9f;
+        transition: linear 0.5s all;
+        transform: scale(1.15);
+        font-weight: 700;
+    }
+    .desktop-mode {
+        display: none;
+    }
+    .mobile-mode {
+        display: block;
+    }
+}
+
+
+section.hospital-find {
+    padding: 20px;
+    margin-top: -35px;
+    font-size: 14px;
+    margin-top: 7%;
+}
+
+section.hospital-find h2 {
+    text-align: center;
+}
+
+section.hospital-find .hosp-content {
+    display: flex;
+    padding-left: 30px;
+    padding-right: 30px;
+}
+
+section.hospital-find .hosp-content img {
+    width: 50%;
+}
+section.hospital-find .hosp-container .hosp-header{
+    font-family: 'Kaushan Script', cursive;
+    font-size: 50px;
+   
+}
+.hosp-content input[type=text] {
+    padding: 14px;
+    border: 1px solid black;
+    border-radius: 4px;
+    margin-top: 8px;
+    margin-right: 16px;
+    font-size: 17px;
+}
+
+.hosp-content form {
+    text-align: right;
+    margin-right: 20px;
+    margin-bottom: 10px;
+}
+
+.hosp-content form button {
+    font-size: 20px;
+    height: 40px;
+    width: 40px;
+    padding: 7px;
+    margin-left: -10px;
+}
+
+#map {
+    overflow: visible;
+}
+
+#map iframe {
+    width: 200%;
+    margin-left: -300px;
+    height: 300px;
+}
+
+.map-box div {
+    display: flex;
+    margin-bottom: 20px;
+}
+
+.map-box div button {
+    width: 40px;
+    height: 40px;
+    margin-top: 13px;
+    padding: 5px;
+}
+
+.map-box div button i {
+    font-size: 23px;
+}
+
+@media (max-width: 1000px) {
+    #map {
+        max-width: 90vw;
+    }
+    section.hospital-find {
+        padding-left: 0px;
+        padding-right: 0px;
+    }
+    section.hospital-find .hosp-content {
+        display: block;
+    }
+    section.hospital-find .hosp-content img {
+        display: block;
+        width: 90%;
+        margin-right: auto;
+        margin-left: auto;
+    }
+    .hosp-search input[type=text] {
+        width: 50%;
+        font-size: 13px;
+    }
+    #map iframe {
+        width: 100%;
+        margin-left: 0px;
+        height: 500px;
+    }
+    .map-box div {
+        display: flex;
+        margin-bottom: 20px;
+    }
+    .map-box div button {
+        margin-top: 13px;
+    }
+}
+footer {
+    background-color: black;
+    padding: 1px;
+}
+
+footer p {
+    color: #ffff;
+    text-align: center;
+}
+
+footer .foot img {
+    display: block;
+    height: 50px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: -18px;
+}
